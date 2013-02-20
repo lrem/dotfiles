@@ -15,13 +15,11 @@ var lap80width = "650";
 
 // Operations
 var lap80left = S.op("corner", {
-    "screen" : monLaptop,
     "direction" : "top-left",
     "width" : lap80width,
     "height" : "screenSizeY"
 });
 var lap80right = S.op("corner", {
-    "screen" : monLaptop,
     "direction" : "top-right",
     "width" : "650",
     "height" : "screenSizeY"
