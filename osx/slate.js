@@ -11,7 +11,8 @@ var monLaptop = "1680x1050";
 var monTV = "1920x1080";
 
 // Window sizes
-var curr80width = "650";
+var curr80widthInt = 650;
+var curr80width = String(curr80widthInt);
 
 // Simple Operations
 var curr80left = S.op("corner", {
@@ -32,7 +33,9 @@ var chatMain = S.op("move", {
     "height": "screenSizeY"
 })
 var currMainLeft = curr80left.dup({"width" : ["screenSizeX-", curr80width].join("") });
-var currMainRight = curr80right.dup({"width": "1030"});
+var currMainRight = curr80right.dup({
+    "width": String(slate.screen().rect().width - curr80widthInt)
+});
 //({"width" : ["screenSizeX-", curr80width].join("") });
 
 // Toggle operations
