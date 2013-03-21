@@ -15,6 +15,21 @@ var curr80widthInt = 650;
 var curr80width = String(curr80widthInt);
 
 // Simple Operations
+var currfull = S.op("corner", {
+    "direction" : "top-left",
+    "width" : "screenSizeX",
+    "height": "screenSizeY"
+});
+var currhalfleft = S.op("corner", {
+    "direction" : "top-left",
+    "width" : "screenSizeX/2",
+    "height": "screenSizeY"
+});
+var currhalfright = S.op("corner", {
+    "direction" : "top-right",
+    "width" : "screenSizeX/2",
+    "height": "screenSizeY"
+});
 var curr80left = S.op("corner", {
     "direction" : "top-left",
     "width" : curr80width,
@@ -163,8 +178,11 @@ S.bnda({
     // Layout Bindings
     "return:ctrl,alt" : universalLayout,
     "space:ctrl;alt" : universalLayout,
+    "f:ctrl,alt" : currfull,
     "right:ctrl,alt" : toggleRight,
     "left:ctrl,alt" : toggleLeft,
+    "right:ctrl,alt,shift" : currhalfright,
+    "left:ctrl,alt,shift" : currhalfleft,
     "up:ctrl,alt" : toggleTop,
     "down:ctrl,alt" : toggleBottom,
 
