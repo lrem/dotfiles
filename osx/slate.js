@@ -48,10 +48,7 @@ var chatMain = S.op("move", {
     "height": "screenSizeY"
 })
 var currMainLeft = curr80left.dup({"width" : ["screenSizeX-", curr80width].join("") });
-var currMainRight = curr80right.dup({
-    "width": String(slate.screen().rect().width - curr80widthInt)
-});
-//({"width" : ["screenSizeX-", curr80width].join("") });
+var currMainRight = curr80right.dup({"width" : ["screenSizeX-", curr80width].join("") });
 
 // Toggle operations
 var main = true;
