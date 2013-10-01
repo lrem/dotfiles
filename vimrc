@@ -1,5 +1,14 @@
-" Basic sanity options
+" Sanity
 set nocompatible
+
+" Vundle startup, when deploying remember to run:
+" git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+
+" Turn on the magic
 syntax on
 set autoindent
 filetype plugin indent on
@@ -23,6 +32,13 @@ set modeline modelines=5
 
 " Tab completion on commands like :edit
 set wildmenu
+
+"Reselect visual block after indent/outdent 
+vnoremap < <gv
+vnoremap > >gv
+
+" Don't suggest opening output files
+set wildignore+=*.o,*.pyc,*.p,*.pdf,coverage/**,out/**
 
 let mapleader=","
 
@@ -57,5 +73,31 @@ imap <F12> <esc><F12>a
 au BufNewFile,BufRead *.tt setf html
 au BufNewFile,BufRead *.md setlocal filetype=markdown
 au BufNewFile,BufRead *.txt setlocal filetype=markdown
+
+" Better auto-completion, on deploying run:
+" cd ~/.vim/bundle/YouCompleteMe && ./install.sh --clang-completer 
+Bundle 'Valloric/YouCompleteMe'
+" To get C/C++ working, look into (by default enables C++):
+" https://raw.github.com/Valloric/YouCompleteMe/master/cpp/ycm/.ycm_extra_conf.py
+let g:ycm_extra_conf_globlist = ['~/*.py']
+
+" Automatic error reporting, in synergy with the above
+Bundle 'scrooloose/syntastic'
+
+" Class explorer
+Bundle 'majutsushi/tagbar'
+map <leader>o :TagbarToggle<cr>
+let Tlist_GainFocus_On_ToggleOpen=1
+let Tlist_Close_On_Select=1
+let Tlist_Exit_OnlyWindow=1
+let Tlist_Use_SingleClick=1
+
+" Directory tree explorer
+Bundle 'scrooloose/nerdtree'
+map <leader>t :NERDTreeToggle<cr>
+
+" Fuzzy file opener
+Bundle 'kien/ctrlp.vim'
+nnoremap tt :CtrlP<cr>
 
 " vim: set nowrap:

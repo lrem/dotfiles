@@ -11,3 +11,8 @@ nnoremap <leader>f :set co=80<cr>:set nonumber<cr>
 
 " Don't start a console vim inside macvim
 map <F11> :!repo diff \| mvim -R -<cr>
+
+" The yellow scheme that doesn't hurt your eyes
+Bundle 'altercation/vim-colors-solarized'
+set background=light
+colorscheme solarized
