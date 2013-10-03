@@ -60,6 +60,8 @@ map <F12> :!repo commit<cr>
 
 " Make them work in insert mode
 imap <F2> <esc><F2>a
+imap <F3> <esc><F2>a
+imap <F4> <esc><F2>a
 imap <F5> <esc><F5>a
 imap <F6> <esc><F6>a
 imap <F7> <esc><F7>a
@@ -83,6 +85,10 @@ let g:ycm_extra_conf_globlist = ['~/*.py']
 
 " Automatic error reporting, in synergy with the above
 Bundle 'scrooloose/syntastic'
+
+" Debugger integration (this can't be handled by vundle as of now :( )
+au BufNewFile,BufRead *.py map <S-F8> :Pyclewn pdb %<cr> :Cmapkeys<cr>
+map <C-s> :Cstep<cr>
 
 " Class explorer
 Bundle 'majutsushi/tagbar'
