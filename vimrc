@@ -105,5 +105,6 @@ map <leader>t :NERDTreeToggle<cr>
 " Fuzzy file opener
 Bundle 'kien/ctrlp.vim'
 nnoremap tt :CtrlP<cr>
+let g:ctrlp_root_markers = ['.fslckout']
 
 " vim: set nowrap:
