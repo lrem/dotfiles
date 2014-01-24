@@ -85,6 +85,7 @@ let g:ycm_extra_conf_globlist = ['~/*.py']
 
 " Automatic error reporting, in synergy with the above
 Bundle 'scrooloose/syntastic'
+let g:syntastic_python_checkers=['python', 'pylint', 'pep8']
 
 " Debugger integration (this can't be handled by vundle as of now :( )
 au BufNewFile,BufRead *.py map <S-F8> :Pyclewn pdb %<cr> :Cmapkeys<cr>
@@ -106,5 +107,9 @@ map <leader>t :NERDTreeToggle<cr>
 Bundle 'kien/ctrlp.vim'
 nnoremap tt :CtrlP<cr>
 let g:ctrlp_root_markers = ['.fslckout']
+
+" CoffeeScript support
+Bundle 'kchmck/vim-coffee-script'
+au BufNewFile,BufRead *.coffee set filetype=coffee
 
 " vim: set nowrap:
