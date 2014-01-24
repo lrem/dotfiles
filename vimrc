@@ -15,7 +15,7 @@ filetype plugin indent on
 
 " Automatic formatting options
 set ts=4 sw=4 sts=4 et textwidth=79
-set formatoptions=qrn1tcj
+set formatoptions=qrn1tc
 
 " Display options
 set showcmd ruler linebreak ttyfast 
